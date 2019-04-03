@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<math.h>
+
+int main(void)
+{
+	int a, b, c;
+	double x, y, p, q;
+
+
+	printf("Enter a, b and c for a quadratic equation ax^2 + bx + c = 0:");
+	scanf("%d%d%d", &a, &b, &c);
+
+	p = b * b - 4 * a*c;
+
+	q = -(double)c / b;
+
+	x = (-b + sqrt(p)) / (2 * a);
+	y = (-b - sqrt(p)) / (2 * a);
+
+	if (a == 0)
+		printf("근은 - %0.2f", q);
+
+	else
+	{
+		if (b * b < 4 * a*c)
+			printf("실근이 존재하지 않는다\n");
+
+		else if (p > 0)
+			printf("두 개의 실근이 존재\n");
+
+		else if (x == y)
+			printf("두 개의 실근이 같다\n");
+	}
+	printf("The answer is <%2.2f, %2.2f>\n", x, y);
+	return 0;
+}

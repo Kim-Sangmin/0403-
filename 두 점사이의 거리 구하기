@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include<math.h>
+
+double dist(int a, int b, int c, int d);
+
+int main(void)
+{
+ int a, b, c, d;
+ double e;
+ char ch;
+
+ do
+ {
+  printf("a와 b를 입력하시오:");
+  scanf("%d %d", &a, &b);
+  printf("c와 d를 입력하시오:");
+  scanf("%d %d", &c, &d);
+
+  e = dist(a, b, c, d);
+  printf("두 점사이의 거리는 %lf입니다.\n", e);
+  getchar();
+
+  printf("다시 실행하시겠습니까?(y/n):");
+  ch=getchar();
+ }
+  while (ch != 'n');
+
+ return 0;
+}
+double dist(int a, int b, int c, int d)
+{
+ return (sqrt((a - c)*(a - c) + (b - d)*(b - d)));
+}
